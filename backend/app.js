@@ -25,7 +25,10 @@ const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
 
 const app = express();
-app.use(cors( * ))
+app.use(cors({
+    credentials: true,
+    origin: ['https://aunnose.netlify.com', 'http://aunnose.netlify.com']
+}))
 app.use(passport.initialize())
 
 // Middleware Setup
