@@ -9,7 +9,7 @@ const Universities = props => {
   const [user, setUser] = useState([])
   useEffect(() => {
     axios
-      .get(`https://git.heroku.com/aunnose.git/universities`)
+      .get(`https://aun-no-se.herokuapp.com/universities`)
       .then(({ data }) => {
         setUser(prevState => {
           return [...prevState, ...data.user]

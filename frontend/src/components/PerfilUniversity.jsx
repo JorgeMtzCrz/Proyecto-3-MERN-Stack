@@ -13,7 +13,7 @@ const PerfilUniversity = props => {
   const [carreer, setCarreer] = useState([])
   useEffect(() => {
     axios
-      .get(`https://git.heroku.com/aunnose.git/${props.match.params.id}`)
+      .get(`https://aun-no-se.herokuapp.com/detailU/${props.match.params.id}`)
       .then(({ data }) => {
         setUniversity(prevState => {
           return {
@@ -28,7 +28,7 @@ const PerfilUniversity = props => {
   }, [props.match.params.id])
   useEffect(() => {
     axios
-      .get(`https://git.heroku.com/aunnose.git/carreer/${props.match.params.id}`)
+      .get(`https://aun-no-se.herokuapp.com/carreer/${props.match.params.id}`)
       .then(({ data }) => {
         setCarreer(prevState => {
           return [...prevState, ...data.carreer]
@@ -67,7 +67,7 @@ const PerfilUniversity = props => {
               <button
                 onClick={e =>
                   axios
-                    .delete(`https://git.heroku.com/aunnose.git/carreer/${carreer._id}`)
+                    .delete(`https://aun-no-se.herokuapp.com/carreer/${carreer._id}`)
                     .then(({ data }) => {
                       Swal.fire('Deleted', data.msg, 'success')
                       props.history.push(`/profile/university/${props.match.params.id}`)

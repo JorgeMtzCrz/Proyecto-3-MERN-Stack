@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseURL = 'https://git.heroku.com/aunnose.git'
+const baseURL = 'https://aun-no-se.herokuapp.com'
 
 class AuthService {
   constructor() {

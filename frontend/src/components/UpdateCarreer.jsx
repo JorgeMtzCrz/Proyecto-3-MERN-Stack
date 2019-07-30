@@ -26,7 +26,7 @@ class CarreerUpdateForm extends React.Component {
 
   componentDidMount() {
     axios
-      .get(`https://git.heroku.com/aunnose.git/carreero/${this.props.match.params.id}`)
+      .get(`https://aun-no-se.herokuapp.com/carreero/${this.props.match.params.id}`)
       .then(({ data }) => {
         this.setState(prevState => {
           return {
@@ -62,7 +62,7 @@ class CarreerUpdateForm extends React.Component {
       if (!err) {
         console.log('Received values of form: ', values)
         axios
-          .patch(`https://git.heroku.com/aunnose.git/carreer/${this.props.match.params.id}`, this.state)
+          .patch(`https://aun-no-se.herokuapp.com/carreer/${this.props.match.params.id}`, this.state)
           .then(({ data }) => {
             this.setState(prevState => {
               return {

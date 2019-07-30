@@ -12,7 +12,7 @@ class UniversityUpdateForm extends React.Component {
 
   componentDidMount() {
     axios
-      .get(`https://git.heroku.com/aunnose.git/detailU/${this.props.match.params.id}`)
+      .get(`https://aun-no-se.herokuapp.com/detailU/${this.props.match.params.id}`)
       .then(({ data }) => {
         this.setState(prevState => {
           return {
@@ -48,7 +48,7 @@ class UniversityUpdateForm extends React.Component {
       if (!err) {
         console.log('Received values of form: ', values)
         axios
-          .patch(`https://git.heroku.com/aunnose.git/university/${this.props.match.params.id}`, this.state)
+          .patch(`https://aun-no-se.herokuapp.com/university/${this.props.match.params.id}`, this.state)
           .then(({ data }) => {
             this.setState(prevState => {
               return {

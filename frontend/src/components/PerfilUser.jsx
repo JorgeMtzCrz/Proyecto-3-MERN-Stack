@@ -7,7 +7,7 @@ const Perfil = props => {
   const [user, setUser] = useState({})
   useEffect(() => {
     axios
-      .get(`https://git.heroku.com/aunnose.git/perfil/${props.match.params.id}`)
+      .get(`https://aun-no-se.herokuapp.com/perfil/${props.match.params.id}`)
       .then(({ data }) => {
         setUser(prevState => {
           return {
