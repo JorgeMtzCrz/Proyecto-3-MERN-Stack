@@ -22,4 +22,18 @@ Al final en la carpeta backend desde la terminal ingresaremos npm run dev para c
 
 Y en frontend utilizaremos yarn start
 
+El enlace al deploy es el siguiente
+https://aunnose.netlify.com/universidades
+
+Pueden usar los siguientes usuarios
+
+Usuario Universidad
+usuario: contacto@ironhack.com
+contraseña: asd
+
+Usuario Estudiante
+usuario:jemc0810@gmail.com
+contraseña: asd
+
+
 Happy Coding! ❤
