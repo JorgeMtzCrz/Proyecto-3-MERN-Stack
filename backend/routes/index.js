@@ -1,7 +1,7 @@
 const { Router } = require('express')
 const router = Router()
 const passport = require('../config/passport')
-const { signup, login, logout, oneUser, universities } = require('../controllers/postController')
+const { signup, login, logout, oneUser, universities, follow } = require('../controllers/postController')
 const { detailUniversity, oneUniversity, updateUniversity } = require('../controllers/postUniversity')
 const { addCarreer, allCarreer, deleteCarreer, updateCarreer, oneCarreer } = require('../controllers/carreerController')
 const uploadCloud = require('../config/cloudinary')
@@ -11,16 +11,13 @@ const { verifyToken } = require('../config/jwt')
 
 
 router.post('/upload', uploadCloud.single('photo'), upload)
-
 router.post('/signup', signup)
-
 router.post('/login', passport.authenticate('local'), login)
-
-router.get('/perfil/:id', oneUser)
-
 router.get('/logout', logout)
 
-router.post('/detailU', detailUniversity)
+router.patch('/follow/:id', follow)
+router.get('/perfil/:id', oneUser)
+router.post('/detailU', verifyToken, detailUniversity)
 router.get('/detailU/:id', oneUniversity)
 router.patch('/university/:id', updateUniversity)
 

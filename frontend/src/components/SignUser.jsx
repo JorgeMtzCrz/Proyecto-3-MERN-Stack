@@ -112,22 +112,26 @@ class RegistrationForm extends React.Component {
     return (
       <LayoutP>
         <div className="signU">
-          <pre>{JSON.stringify(this.state)}</pre>
           <h2>Registro de Usuarios</h2>
         </div>
         <Form {...formItemLayout} onSubmit={this.handleSubmit}>
+          <Form.Item label="Perfil">
+            {getFieldDecorator('role', {
+              rules: [{ type: 'array', required: true, message: 'Por favor selecciona tu perfil' }]
+            })(<Cascader options={profile} name="role" onChange={values => this.handleCascader(values, 'role')} />)}
+          </Form.Item>
           <Form.Item
             label={
               <span>
                 Nombre&nbsp;
-                <Tooltip title="El nombre con el que te conocen">
+                <Tooltip title="El nombre con el que te conocen o conocen a tu institución">
                   <Icon type="question-circle-o" />
                 </Tooltip>
               </span>
             }
           >
-            {getFieldDecorator('nickname', {
-              rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }]
+            {getFieldDecorator('name', {
+              rules: [{ required: true, message: 'Por favor introduce un nombre', whitespace: true }]
             })(<Input name="name" onChange={this.handleInput} />)}
           </Form.Item>
           <Form.Item label="E-mail">
@@ -135,11 +139,11 @@ class RegistrationForm extends React.Component {
               rules: [
                 {
                   type: 'email',
-                  message: 'The input is not valid E-mail!'
+                  message: 'El correo electrónico ingresado no es valido'
                 },
                 {
                   required: true,
-                  message: 'Please input your E-mail!'
+                  message: 'Por favor ingresa un correo electrónico'
                 }
               ]
             })(<Input name="email" onChange={this.handleInput} />)}
@@ -149,7 +153,7 @@ class RegistrationForm extends React.Component {
               rules: [
                 {
                   required: true,
-                  message: 'Please input your password!'
+                  message: 'Por favor ingresa una contraseña'
                 },
                 {
                   validator: this.validateToNextPassword
@@ -162,7 +166,7 @@ class RegistrationForm extends React.Component {
               rules: [
                 {
                   required: true,
-                  message: 'Please confirm your password!'
+                  message: 'PConfirma tu contraseña'
                 },
                 {
                   validator: this.compareToFirstPassword
@@ -170,11 +174,7 @@ class RegistrationForm extends React.Component {
               ]
             })(<Input.Password onBlur={this.handleConfirmBlur} />)}
           </Form.Item>
-          <Form.Item label="Perfil">
-            {getFieldDecorator('residence', {
-              rules: [{ type: 'array', required: true, message: 'Por favor selecciona tu perfil' }]
-            })(<Cascader options={profile} name="role" onChange={values => this.handleCascader(values, 'role')} />)}
-          </Form.Item>
+
           <Form.Item {...tailFormItemLayout}>
             <Button type="primary" htmlType="submit" className="login-form-button2">
               Register

@@ -27,7 +27,7 @@ const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.
 const app = express();
 app.use(cors({
     credentials: true,
-    origin: ['https://aunnose.netlify.com', 'http://aunnose.netlify.com']
+    origin: ['https://aunnose.netlify.com', 'http://aunnose.netlify.com', 'http://localhost:3001']
 }))
 app.use(passport.initialize())
 

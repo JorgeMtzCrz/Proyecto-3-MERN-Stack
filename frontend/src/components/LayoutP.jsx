@@ -86,9 +86,6 @@ const LayoutP = props => {
             <Menu.Item key="2">
               <Link to={`/profile/${loggedUser._id}`}>Perfil</Link>
             </Menu.Item>
-            <Menu.Item key="3">
-              <Link to={`/`}>Tus intereses</Link>
-            </Menu.Item>
             <Menu.Item key="4">
               <Link to={`/universidades`}>Universidades</Link>
             </Menu.Item>
@@ -98,7 +95,7 @@ const LayoutP = props => {
           </Menu>
         </Header>
         <Content style={{ width: '100vw' }}>
-          <div style={{ background: '#fff', padding: 30, minHeight: 660 }} className="principal">
+          <div style={{ background: '#fff', padding: 30, minHeight: 550 }} className="principal">
             {props.children}
           </div>
         </Content>

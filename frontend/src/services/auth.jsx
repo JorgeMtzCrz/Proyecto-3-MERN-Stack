@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseURL = 'https://aun-no-se.herokuapp.com'
+const baseURL = 'https://diegoye.herokuapp.com'
 
 class AuthService {
   constructor() {

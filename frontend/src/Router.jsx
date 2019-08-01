@@ -9,6 +9,8 @@ import Universities from './components/Universities'
 import WrappedFormCarreer from './components/AddCarreer'
 import WrappedFormUpdateUniversity from './components/UpdateU'
 import WrappedFormUpdateCarreer from './components/UpdateCarreer'
+import UniversidadDetail from './components/UniversidadDetail'
+import CareerDetail from './components/CareerDetail'
 
 const Router = () => (
   <BrowserRouter>
@@ -22,6 +24,8 @@ const Router = () => (
       <Route component={WrappedFormCarreer} exact path="/profile/university/:id/addcarreer" />
       <Route component={WrappedFormUpdateCarreer} exact path="/updateC/:id" />
       <Route component={WrappedFormUpdateUniversity} exact path="/updateU/:id" />
+      <Route component={UniversidadDetail} exact path="/universidad/:id" />
+      <Route component={CareerDetail} exact path="/career/:id" />
     </Switch>
   </BrowserRouter>
 )

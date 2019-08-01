@@ -9,16 +9,47 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-.ant-carousel .slick-slide {
-    text-align: center;
-    height: 450px;
-    line-height: 450px;
-    background: #364d79;
-    overflow: hidden;
+
+.ant-carousel .div1{
+  text-align: center;
+  height: 450px;
+  line-height: 450px;
+  overflow: hidden;
+  background-image: url('https://www.questionpro.com/blog/wp-content/uploads/2018/08/Encuestas-estudiantes.jpg');
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+}
+.ant-carousel .div2{
+  text-align: center;
+  height: 450px;
+  line-height: 450px;
+  overflow: hidden;
+  background-image: url('https://www.diariodemorelos.com/noticias/sites/default/files/field/image/Estudiantes-Francia-010819.jpg');
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+}
+.ant-carousel .div3{
+  text-align: center;
+  height: 450px;
+  line-height: 450px;
+  overflow: hidden;
+  background-image: url('https://ocioenlasierra.com/wp-content/uploads/2019/02/estudiantes.jpg');
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+}
+.ant-carousel .div4{
+  text-align: center;
+  height: 450px;
+  line-height: 450px;
+  overflow: hidden;
+  background-image: url('https://www.saeko.io/images/blog/VIP/saeko/estudiantes.jpg');
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
 }
 
 .ant-carousel .slick-slide h3 {
-    color: #fff;
+    color: red;
+    font-size: 50px;
 }
 
 .login-form {
@@ -68,7 +99,14 @@ code {
     align-content: center;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
+}
+
+.principal3 {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .principal2>Card {

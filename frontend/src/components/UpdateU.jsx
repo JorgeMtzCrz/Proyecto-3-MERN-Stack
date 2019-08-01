@@ -12,7 +12,7 @@ class UniversityUpdateForm extends React.Component {
 
   componentDidMount() {
     axios
-      .get(`https://aun-no-se.herokuapp.com/detailU/${this.props.match.params.id}`)
+      .get(`https://diegoye.herokuapp.com/detailU/${this.props.match.params.id}`)
       .then(({ data }) => {
         this.setState(prevState => {
           return {
@@ -48,7 +48,7 @@ class UniversityUpdateForm extends React.Component {
       if (!err) {
         console.log('Received values of form: ', values)
         axios
-          .patch(`https://aun-no-se.herokuapp.com/university/${this.props.match.params.id}`, this.state)
+          .patch(`https://diegoye.herokuapp.com/university/${this.props.match.params.id}`, this.state)
           .then(({ data }) => {
             this.setState(prevState => {
               return {
@@ -99,25 +99,10 @@ class UniversityUpdateForm extends React.Component {
     return (
       <LayoutP>
         <div className="signU">
-          <pre>{JSON.stringify(this.state)}</pre>
+          
           <h2>Actualizar información de la Institución</h2>
         </div>
         <Form {...formItemLayout} onSubmit={this.handleSubmit}>
-          <Form.Item
-            label={
-              <span>
-                Nombre&nbsp;
-                <Tooltip title="El nombre de la institución">
-                  <Icon type="question-circle-o" />
-                </Tooltip>
-              </span>
-            }
-          >
-            {getFieldDecorator('name', {
-              rules: [{ required: true, message: 'Por favor ingresa un nombre', whitespace: true }],
-              initialValue: `${this.state.userId.name}`
-            })(<Input name="name" onChange={this.handleInput} />)}
-          </Form.Item>
           <Form.Item
             label={
               <span>
@@ -174,12 +159,75 @@ class UniversityUpdateForm extends React.Component {
               rules: [
                 {
                   required: true,
-                  message: 'Por favor ingresa el tiempo requerido para culminar la carrera',
+                  message: 'Por favor ingresa la dirección de la escuela',
                   whitespace: true
                 }
               ],
               initialValue: `${this.state.address}`
             })(<Input name="address" onChange={this.handleInput} />)}
+          </Form.Item>
+          <Form.Item
+            label={
+              <span>
+                Misión&nbsp;
+                <Tooltip title="Escribe la misión de tu escuela">
+                  <Icon type="question-circle-o" />
+                </Tooltip>
+              </span>
+            }
+          >
+            {getFieldDecorator('mision', {
+              rules: [
+                {
+                  required: true,
+                  message: 'Por favor ingresa la misión de la escuela',
+                  whitespace: true
+                }
+              ],
+              initialValue: `${this.state.mision}`
+            })(<Input name="mision" onChange={this.handleInput} />)}
+          </Form.Item>
+          <Form.Item
+            label={
+              <span>
+                Visión&nbsp;
+                <Tooltip title="Escribe la visión de tu escuela">
+                  <Icon type="question-circle-o" />
+                </Tooltip>
+              </span>
+            }
+          >
+            {getFieldDecorator('vision', {
+              rules: [
+                {
+                  required: true,
+                  message: 'Por favor ingresa la visión de la escuela',
+                  whitespace: true
+                }
+              ],
+              initialValue: `${this.state.vision}`
+            })(<Input name="vision" onChange={this.handleInput} />)}
+          </Form.Item>
+          <Form.Item
+            label={
+              <span>
+                Objetivo&nbsp;
+                <Tooltip title="Escribe el objetivo de tu escuela">
+                  <Icon type="question-circle-o" />
+                </Tooltip>
+              </span>
+            }
+          >
+            {getFieldDecorator('objetivo', {
+              rules: [
+                {
+                  required: true,
+                  message: 'Por favor ingresa el objetivo de la escuela',
+                  whitespace: true
+                }
+              ],
+              initialValue: `${this.state.objetivo}`
+            })(<Input name="objetivo" onChange={this.handleInput} />)}
           </Form.Item>
           <Form.Item {...tailFormItemLayout}>
             <Button type="primary" htmlType="submit" className="login-form-button2">

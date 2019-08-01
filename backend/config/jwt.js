@@ -12,9 +12,9 @@ exports.createToken = (user) => {
 
 exports.verifyToken = (req, res, next) => {
     const { headload, signature } = req.cookies
-    if (!headload || !signature) res.status(401).json({ msg: 'Unauthorized' })
+    if (!headload || !signature) return res.status(401).json({ msg: 'Te falta algo para realizar esta acción' })
     jwt.verify(headload + signature, process.env.SECRET, (err, decoded) => {
-        if (err) res.status(401).json({ msg: 'Unauthorized, missing token' })
+        if (err) return res.status(401).json({ msg: 'Unauthorized, missing token' })
         User.findById(decoded.userId)
             .then(user => {
                 req.user = user

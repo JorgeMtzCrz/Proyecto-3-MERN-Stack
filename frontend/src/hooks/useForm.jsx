@@ -17,7 +17,7 @@ export default () => {
 
   //   const {
   //     data: { img }
-  //   } = await axios.post('http://localhost:3000/upload', file)
+  //   } = await axios.post('https://diegoye.herokuapp.com/upload', file)
   //   setForm(prevState => ({ ...prevState, img }))
   // }
 

@@ -26,7 +26,7 @@ class CarreerUpdateForm extends React.Component {
 
   componentDidMount() {
     axios
-      .get(`https://aun-no-se.herokuapp.com/carreero/${this.props.match.params.id}`)
+      .get(`https://diegoye.herokuapp.com/carreero/${this.props.match.params.id}`)
       .then(({ data }) => {
         this.setState(prevState => {
           return {
@@ -62,7 +62,7 @@ class CarreerUpdateForm extends React.Component {
       if (!err) {
         console.log('Received values of form: ', values)
         axios
-          .patch(`https://aun-no-se.herokuapp.com/carreer/${this.props.match.params.id}`, this.state)
+          .patch(`https://diegoye.herokuapp.com/carreer/${this.props.match.params.id}`, this.state)
           .then(({ data }) => {
             this.setState(prevState => {
               return {
@@ -113,7 +113,7 @@ class CarreerUpdateForm extends React.Component {
     return (
       <LayoutP>
         <div className="signU">
-          <pre>{JSON.stringify(this.state)}</pre>
+          
           <h2>Actualizar información de Carrera</h2>
         </div>
         <Form {...formItemLayout} onSubmit={this.handleSubmit}>
@@ -198,7 +198,7 @@ class CarreerUpdateForm extends React.Component {
                 }
               ],
               initialValue: `${this.state.areaLaboral}`
-            })(<Input name="perfil" onChange={this.handleInput} />)}
+            })(<Input name="areaLaboral" onChange={this.handleInput} />)}
           </Form.Item>
           <Form.Item
             label={

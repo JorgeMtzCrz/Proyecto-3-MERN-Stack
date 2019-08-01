@@ -2,12 +2,31 @@ const { Schema, model } = require('mongoose')
 const PLM = require('passport-local-mongoose')
 
 const universitySchema = new Schema({
-    telephone: Number,
+    telephone: {
+        type: String,
+        default: 'Actualiza tus datos'
+    },
     typeSocial: {
         type: String,
-        enum: ['Pública', 'Privada']
+        enum: ['Pública', 'Privada', 'Actualiza tus datos'],
+        default: 'Actualiza tus datos'
     },
-    address: String,
+    address: {
+        type: String,
+        default: 'Actualiza tus datos'
+    },
+    mision: {
+        type: String,
+        default: 'Actualiza tus datos'
+    },
+    vision: {
+        type: String,
+        default: 'Actualiza tus datos'
+    },
+    objetivo: {
+        type: String,
+        default: 'Actualiza tus datos'
+    },
     location: {
         address: {
             type: String,
@@ -15,7 +34,10 @@ const universitySchema = new Schema({
         },
         coordinates: [Number]
     },
-    followers: [String],
+    followers: [{
+        type: Schema.Types.ObjectId,
+        ref: "User"
+    }],
     userId: {
         type: Schema.Types.ObjectId,
         ref: "User"

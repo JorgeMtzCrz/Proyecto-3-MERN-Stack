@@ -30,9 +30,7 @@ class NormalLoginForm extends React.Component {
             }
           })
           .catch(err => {
-            //aquí deberia ir una notificacion o un swal o un toastr
-            console.log(err.response)
-            // alert(err.response.data || err.response.data)
+            alert('Usuario o Contraseña Incorrecta')
           })
       }
     })
@@ -54,7 +52,7 @@ class NormalLoginForm extends React.Component {
           <Form onSubmit={this.handleSubmit} className="login-form">
             <Form.Item>
               {getFieldDecorator('email', {
-                rules: [{ required: true, message: 'Please input your email!' }]
+                rules: [{ required: true, message: 'Por favor ingresa tu Correo Electrónico' }]
               })(
                 <Input
                   prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
@@ -67,7 +65,7 @@ class NormalLoginForm extends React.Component {
             </Form.Item>
             <Form.Item>
               {getFieldDecorator('password', {
-                rules: [{ required: true, message: 'Please input your Password!' }]
+                rules: [{ required: true, message: 'Por favor ingresa tu contraseña' }]
               })(
                 <Input
                   prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
@@ -83,7 +81,7 @@ class NormalLoginForm extends React.Component {
               <Button type="primary" htmlType="submit" className="login-form-button">
                 Log in
               </Button>
-              Or <Link to="/signup">register now!</Link>
+              O <Link to="/signup">Registrate ahora</Link>
             </Form.Item>
           </Form>
         </div>

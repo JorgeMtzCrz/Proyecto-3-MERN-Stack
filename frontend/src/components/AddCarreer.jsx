@@ -94,7 +94,6 @@ class CarreerForm extends React.Component {
     return (
       <LayoutP>
         <div className="signU">
-          <pre>{JSON.stringify(this.state)}</pre>
           <h2>Registro de Carrera</h2>
         </div>
         <Form {...formItemLayout} onSubmit={this.handleSubmit}>
@@ -175,7 +174,7 @@ class CarreerForm extends React.Component {
                   whitespace: true
                 }
               ]
-            })(<Input name="perfil" onChange={this.handleInput} />)}
+            })(<Input name="areaLaboral" onChange={this.handleInput} />)}
           </Form.Item>
           <Form.Item
             label={
