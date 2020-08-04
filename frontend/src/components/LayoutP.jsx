@@ -8,6 +8,7 @@ const { Header, Content, Footer } = Layout
 const LayoutP = props => {
   const authService = new AuthService()
   const loggedUser = JSON.parse(localStorage.getItem('loggedUser'))
+  console.log(loggedUser)
 
   const handleLogout = () => {
     authService

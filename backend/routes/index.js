@@ -10,7 +10,7 @@ const { verifyToken } = require('../config/jwt')
 
 
 
-router.post('/upload', uploadCloud.single('photo'), upload)
+
 router.post('/signup', signup)
 router.post('/login', passport.authenticate('local'), login)
 router.get('/logout', logout)
